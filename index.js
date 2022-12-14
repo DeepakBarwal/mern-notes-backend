@@ -6,6 +6,8 @@ const corsOptions = require('./config/corsOptions');
 const {notesRouter} = require('./api/v1/index');
 require('./db');
 
+app.use(express.json());
+
 app.use('/notes', cors(corsOptions), notesRouter);
 
 app.listen(PORT, () => {
