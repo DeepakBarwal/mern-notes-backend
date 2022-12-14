@@ -15,8 +15,11 @@ notesRouter.get('/', async (req, res) => {
 
 // Add a note
 notesRouter.post('/', async (req, res) => {
+  const newNote = new Note(req.body);
+  const savedNote = await newNote.save();
   res.json({
-    reply: 'note created'
+    note: savedNote,
+    success: true
   });
 });
 
