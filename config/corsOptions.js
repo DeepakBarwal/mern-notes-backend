@@ -1,4 +1,4 @@
-const allowedUrls = ['https://poetic-tiramisu-55057c.netlify.app', http://localhost:3000', undefined];
+const allowedUrls = ['http://localhost:3000', undefined];
 
 const corsOptions = {
   origin: function (origin, callback) {
