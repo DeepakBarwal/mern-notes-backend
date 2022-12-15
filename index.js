@@ -14,3 +14,5 @@ app.use('/notes', cors(corsOptions), notesRouter);
 app.listen(PORT, () => {
   console.log(`MERN Notes Backend App running on http://localhost:${PORT}`)
 });
+
+module.exports = app;
