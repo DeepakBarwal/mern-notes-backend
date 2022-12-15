@@ -36,6 +36,13 @@ notesRouter.get('/:id', async (req, res) => {
 
 // Delete a note by id
 notesRouter.delete('/:id', async (req, res) => {
+  const noteId = req.params.id;
+  try {
+    const removedNote = await Note.findByIdAndRemove(noteId);
+    return res.json({removedNote});
+  } catch (error) {
+    return console.log(error);
+  }
   res.json({
     reply: 'note deleted'
   });
