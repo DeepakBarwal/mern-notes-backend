@@ -50,7 +50,7 @@ notesRouter.put('/:id', async (req, res) => {
   const noteId = req.params.id;
   const updatedBody = req.body;
   try {
-    const updatedNote = await Note.findOneAndUpdate(noteId, updatedBody);
+    const updatedNote = await Note.findByIdAndUpdate(noteId, updatedBody, {new: true});
     return res.json({updatedNote});
   } catch (error) {
     return console.log(error);
