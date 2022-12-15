@@ -25,9 +25,13 @@ notesRouter.post('/', async (req, res) => {
 
 // Get a note by id
 notesRouter.get('/:id', async (req, res) => {
-  res.json({
-    reply: 'note by id success'
-  });
+  const noteId = req.params.id;
+  try {
+    const foundNote = await Note.findById(noteId);
+    res.json({foundNote});
+  } catch (error) {
+    return console.log(error);
+  }
 });
 
 // Delete a note by id
