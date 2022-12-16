@@ -1,4 +1,4 @@
-const allowedUrls = ['http://localhost:3000', undefined];
+const allowedUrls = ['http://localhost:3000', 'https://deepakbarwal.github.io'];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -6,7 +6,7 @@ const corsOptions = {
       callback(null, true);
     }
     else {
-      callback(new Error('Not allowed ny cors'));
+      callback(new Error('Not allowed by cors'));
     }
   }
 };
